@@ -5,7 +5,7 @@ import Footer from './components/Footer.jsx';
 
 function App(){
  //State
-   const [tasks] = useState([
+   const [tasks,setTasks] = useState([
   {
     id: 1,
     title: "Learn React",
