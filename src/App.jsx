@@ -26,7 +26,39 @@ function App(){
   },
 ]);
 
+//Toggle
 
+function toggleTask(id) {
+  setTasks(
+    tasks.map(task => {
+      if (task.id === id) {
+        return { ...task, completed: !task.completed };
+      }
+      return task;
+    })
+  );
+}
+
+//delete
+function deleteTask(id) {
+  setTasks(
+    tasks.filter(task => task.id !== id)
+  );
+}
+
+//EditTitle
+function editTask(id, newTitle) {
+  setTasks(
+    tasks.map(task => {
+      if (task.id === id) {
+        return { ...task, title: newTitle };
+      }
+      return task;
+    })
+  );
+}
+
+//App
   return (
 
   <section className="todoapp">
@@ -36,7 +68,10 @@ function App(){
       </header>
 
       <section className="main">
-        <TaskList tasks={tasks}/>
+        <TaskList tasks={tasks} 
+        onToggle={toggleTask}
+        onDelete={deleteTask}
+        onEdit={editTask}/>
       </section>
 
       <Footer />
