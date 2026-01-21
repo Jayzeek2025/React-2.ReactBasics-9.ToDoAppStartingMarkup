@@ -11,12 +11,13 @@ function Task({ title, completed }) {
 
         <label>
           <span className="description">{title}</span>
-          <span className="created">created just now</span>
+          <span className="created">created just        now</span>
         </label>
+      </div>
 
         <button className="icon icon-edit"></button>
         <button className="icon icon-destroy"></button>
-      </div>
+     
     </li>
   );
 }
